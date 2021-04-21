@@ -1,0 +1,42 @@
+$DarkBlue: #415167;
+$DarkGray: #151d28;
+$FirstAccent: #c7a17a;
+$LightGray: #edf0f5;
+$SecondAccent: #f9f5e8;
+
+body{
+    color: $DarkBlue;
+    background-color: #F9FBFF;
+}
+
+.body{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.wrap{
+    width: 1349px;
+}
+
+.titles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 86px 0;
+    .title{
+        font-size: 1.2em;
+    }
+    .title_bold{
+        font-size: 29px;
+    }
+}
+
+footer{
+    background-color: $LightGray;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    small{
+        margin: 0 auto;
+    }
+}

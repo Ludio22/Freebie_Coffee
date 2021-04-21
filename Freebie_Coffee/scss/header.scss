@@ -1,0 +1,78 @@
+$DarkBlue: #415167;
+$DarkGray: #151d28;
+$FirstAccent: #c7a17a;
+$LightGray: #edf0f5;
+$SecondAccent: #f9f5e8;
+
+
+.header {
+    display: flex;
+    height: 740px;
+    &__tagline{
+        font-size: 54px;
+        transform: translate(204px, 52px);
+        line-height: 66px;
+        color: $DarkBlue;
+        &_background-color{
+            color: $LightGray;
+            background-color: $FirstAccent;
+            padding: 0 13px;
+            z-index: 0;
+        }
+    }
+    &__column {
+        &1 {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 71px 0px;
+            width: 420px;
+        }
+        &2{
+            background-image: url(../src/header/bacground_img.png);
+            background-size: cover;
+            height: inherit;
+            width: 665px;
+            z-index: -1;
+            &-shadow{
+                background-color: $DarkGray;
+                height: inherit;
+                opacity: 30%;
+            }
+        }
+        &3{
+            background-color: $DarkBlue;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 120px 0;
+            width: 264px;
+        }
+    }
+    &__menu {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        line-height: 48px;
+        margin-bottom: 80px;
+        a{
+            color: $LightGray;
+        }
+        &-item:first-child{
+            font-weight: 700;
+        }
+    }
+    &__cart{
+        margin-left: 55px;
+        &-counter{
+            background-color: $FirstAccent;
+            border-radius: 50%;
+            color: $SecondAccent;
+            height: 18px;
+            text-align: center;
+            transform: translate(10px, -35px);
+            width: 18px;
+        }
+    }
+}
