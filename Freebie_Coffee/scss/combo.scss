@@ -1,38 +1,27 @@
-$DarkBlue: #415167;
-$DarkGray: #151d28;
-$FirstAccent: #c7a17a;
-$LightGray: #edf0f5;
-$SecondAccent: #f9f5e8;
-$marginCoffee: 16px;
-
-.combo__wrapper{
-    height: 992px;
-}
+@import "config.scss";
 
 .combo{
-    position: relative;
+    height: calc(906px - 114px);
     &__block_blue {
         background-color: #415167;
-        height: 992px;
+        height: 100%;
         position: absolute;
-        width: 314px;
-        left: 1035px;
+        width: 22%;
+        left: calc(100% - 22%);
         z-index: -1;
     }
     &__items {
         display: flex;
-        margin: 0 100px;
-        flex-wrap: wrap;
         .combo__item {
             background-color: white;
-            display: flex;
-            flex-direction: column;
-            width: 350px;
-            height: fit-content;
+            width: 33.3%;
             &:nth-child(-n + 2) {
-                margin-right: $marginCoffee;
+                margin: 0 $marginCoffee 0 0;
             }
         }
+    }
+    &__img{
+        width: 100%;
     }
     &__info {
         margin: 40px 44px;

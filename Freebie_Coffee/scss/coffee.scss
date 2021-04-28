@@ -1,31 +1,21 @@
-$DarkBlue: #415167;
-$DarkGray: #151d28;
-$FirstAccent: #c7a17a;
-$LightGray: #edf0f5;
-$SecondAccent: #f9f5e8;
-$marginCoffee: 16px;
-
-.coffee__wrapper{
-    height: 862px;
-}
+@import "config.scss";
 
 .coffee {
+    height: calc(894px - 114px);
     &__block_blue {
         background-color: #415167;
-        height: 862px;
+        height: 100%;
         position: absolute;
-        width: 368px;
+        width: 27%;
         z-index: -1;
     }
     &__items {
         display: flex;
-        margin: 0 100px;
-        flex-wrap: wrap;
+        flex-direction: column;
         .coffee__item {
             background-color: white;
             display: flex;
-            width: 560px;
-            height: 256px;
+            flex: 0 1 50%;
             &:nth-child(-n + 2) {
                 margin-bottom: $marginCoffee;
             }
@@ -34,33 +24,73 @@ $marginCoffee: 16px;
             }
         }
     }
+    &__column {
+        display: flex;
+    }
     &__info {
         margin: 40px 44px;
     }
     &__prise {
         font-weight: 600;
         color: $FirstAccent;
-        font-size: 20px;
+        font-size: 1.25em;
     }
     &__name {
-        font-size: 24px;
+        font-size: calc(1.2em + 5 * (100vw / 1280));
         font-weight: 700;
         color: $DarkGray;
     }
     &__img-block {
         background-color: $LightGray;
+        width: max-content;
     }
     &__add {
         align-items: center;
         display: flex;
         justify-content: space-around;
         &_radius {
-            background-color: $FirstAccent;
-            border-radius: 9px;
-            color: $SecondAccent;
-            height: 18px;
-            text-align: center;
-            width: 100px;
+            align-items: center;
+            background-color: #c7a17a;
+            border-radius: 16px;
+            color: #f9f5e8;
+            display: flex;
+            justify-content: center;
+            height: 32px;
+            width: 116px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .coffee {
+        &__info {
+            margin: 0 40px;
+        }
+        &__item {
+            width: 50%;
+        }
+        &__img-block {
+            width: 50%;
+        }
+        &__img {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .coffee {
+        height: auto;
+        .coffee__item {
+            flex-direction: column;
+            margin-right: 0 !important;
+            width: 60%;
+        }
+        &__img-block {
+            width: auto;
+        }
+        &__name {
+            font-size: calc(1.2em + (5 + 5 * 0.7) * ((100vw - 320px) / 1280));
         }
     }
 }

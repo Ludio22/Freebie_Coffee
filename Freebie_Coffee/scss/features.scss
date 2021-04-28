@@ -1,22 +1,19 @@
-$DarkBlue: #415167;
-$DarkGray: #151d28;
-$FirstAccent: #c7a17a;
-$LightGray: #edf0f5;
-$SecondAccent: #f9f5e8;
+@import "config.scss";
 
-.features__wrapper {
-    height: 577px;
-}
 .features {
+    height: calc(600px - 114px);
+    &__column{
+        display: flex;
+    }
     &__items {
-        margin: 0 155px;
         display: flex;
     }
     &__item {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
         padding: 0 20px;
+        text-align: center;
+        width: 22%;
     }
 }

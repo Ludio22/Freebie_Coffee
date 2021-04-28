@@ -1,42 +1,114 @@
-$DarkBlue: #415167;
-$DarkGray: #151d28;
-$FirstAccent: #c7a17a;
-$LightGray: #edf0f5;
-$SecondAccent: #f9f5e8;
+@import "config.scss";
 
-body{
+body {
     color: $DarkBlue;
-    background-color: #F9FBFF;
+    background-color: #f9fbff;
 }
 
-.body{
-    width: fit-content;
+.wrapper {
+    position: relative;
+}
+
+.container {
+    max-width: 1138px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: inherit;
 }
 
-.wrap{
-    width: 1349px;
-}
-
-.titles{
+.titles {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 86px 0;
-    .title{
+    text-align: center;
+    .title {
         font-size: 1.2em;
     }
-    .title_bold{
+    .title_bold {
         font-size: 29px;
     }
 }
 
-footer{
+footer {
     background-color: $LightGray;
     display: flex;
     height: 60px;
     align-items: center;
-    small{
+    small {
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 1138px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+    .add{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .block {
+        display: none;
+    }
+    .container {
+        max-width: none;
+        padding: 0 2%;
+    }
+    .column {
+        flex-direction: column;
+        align-items: center;
+    }
+    .features {
+        &__items {
+            flex-wrap: wrap;
+        }
+        &__column {
+            justify-content: space-around;
+        }
+        &__item {
+            flex: 1 0 auto;
+        }
+    }
+    .wrapper {
+        height: max-content;
+    }
+    .titles {
+        margin: 3% 0;
+    }
+    .giftset {
+        &__content {
+            flex-direction: column;
+        }
+        &__img_gift {
+            transform: none;
+        }
+        &__description-wrapper {
+            transform: none;
+            padding: 2% 5%;
+            margin: 0 5% 5% 5%;
+        }
+    }
+    .combo {
+        &__items {
+            .combo__item {
+                width: 60%;
+                &:nth-child(-n + 2) {
+                    margin: 0 0 $marginCoffee 0;
+                }
+            }
+        }
+    }
+    footer{
+        height: 40px;
     }
 }

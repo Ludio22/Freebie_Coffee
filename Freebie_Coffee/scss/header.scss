@@ -1,71 +1,58 @@
-$DarkBlue: #415167;
-$DarkGray: #151d28;
-$FirstAccent: #c7a17a;
-$LightGray: #edf0f5;
-$SecondAccent: #f9f5e8;
-
+@import "config.scss";
 
 .header {
     display: flex;
     height: 740px;
-    &__tagline{
-        font-size: 54px;
+    width: inherit;
+    margin: 0 auto;
+    /*LOGO*/
+    &__logo {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 70px 0px;
+        width: 32%;
+    }
+    &__tagline {
+        font-size: calc(2em + 20 * (100vw / 1280));
         transform: translate(204px, 52px);
-        line-height: 66px;
         color: $DarkBlue;
-        &_background-color{
+        white-space: pre-line;
+        &_bc {
             color: $LightGray;
             background-color: $FirstAccent;
             padding: 0 13px;
             z-index: 0;
         }
     }
-    &__column {
-        &1 {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 71px 0px;
-            width: 420px;
-        }
-        &2{
-            background-image: url(../src/header/bacground_img.png);
-            background-size: cover;
+
+    /*BACKGROUND*/
+    &__background {
+        background-image: url(../src/header/bacground_img.png);
+        background-size: cover;
+        height: inherit;
+        width: 50%;
+        z-index: -1;
+        &_shadow {
+            background-color: $DarkGray;
             height: inherit;
-            width: 665px;
-            z-index: -1;
-            &-shadow{
-                background-color: $DarkGray;
-                height: inherit;
-                opacity: 30%;
-            }
-        }
-        &3{
-            background-color: $DarkBlue;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 120px 0;
-            width: 264px;
+            opacity: 30%;
         }
     }
-    &__menu {
-        align-self: center;
+
+    /*NAVIGATOR*/
+    &__navigator {
+        background-color: $DarkBlue;
         display: flex;
         flex-direction: column;
-        line-height: 48px;
-        margin-bottom: 80px;
-        a{
-            color: $LightGray;
-        }
-        &-item:first-child{
-            font-weight: 700;
-        }
+        justify-content: space-between;
+        padding: 120px 0;
+        width: 18%;
     }
-    &__cart{
+    &__cart {
         margin-left: 55px;
-        &-counter{
+        &-counter {
             background-color: $FirstAccent;
             border-radius: 50%;
             color: $SecondAccent;
@@ -73,6 +60,58 @@ $SecondAccent: #f9f5e8;
             text-align: center;
             transform: translate(10px, -35px);
             width: 18px;
+        }
+    }
+    &__menu {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        line-height: 48px;
+        transition-property: color;
+        margin-bottom: 80px;
+        a {
+            color: $LightGray;
+        }
+        &-item:hover {
+            font-weight: 700;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .header__navigator {
+        padding: 120px 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        &__logo {
+            width: auto;
+        }
+        &__tagline {
+            font-size: calc(2em + (20 + 20 * 0.7) * ((100vw - 320px) / 1280));
+            text-align: center;
+            transform: none;
+        }
+        &__background {
+            display: none;
+        }
+        &__navigator {
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10% 0;
+            width: auto;
+        }
+        &__cart {
+            margin-left: 0;
+        }
+        &__menu {
+            margin-bottom: 0;
         }
     }
 }
