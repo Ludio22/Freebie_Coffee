@@ -1,19 +1,19 @@
 @import "config.scss";
 
 .features {
-    height: calc(600px - 114px);
-    &__column{
+    height: 486px;
+    &__column {
         display: flex;
     }
     &__items {
-        display: flex;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 2em;
+        display: grid;
     }
     &__item {
         align-items: center;
         display: flex;
         flex-direction: column;
-        padding: 0 20px;
         text-align: center;
-        width: 22%;
     }
 }

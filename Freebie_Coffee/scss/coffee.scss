@@ -29,6 +29,9 @@
     }
     &__info {
         margin: 40px 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     &__prise {
         font-weight: 600;
@@ -70,7 +73,7 @@
             width: 50%;
         }
         &__img-block {
-            width: 50%;
+            display: flex;
         }
         &__img {
             width: 100%;
