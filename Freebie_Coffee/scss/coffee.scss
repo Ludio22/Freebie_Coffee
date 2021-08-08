@@ -1,7 +1,12 @@
 @import "config.scss";
 
 .coffee {
-    height: calc(894px - 114px);
+    .container{
+        padding: 30px;
+    }
+    &__titles{
+        padding-bottom: 3em;
+    }
     &__block_blue {
         background-color: #415167;
         height: 100%;
@@ -10,25 +15,20 @@
         z-index: -1;
     }
     &__items {
-        display: flex;
-        flex-direction: column;
+        gap: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         .coffee__item {
             background-color: white;
             display: flex;
-            flex: 0 1 50%;
-            &:nth-child(-n + 2) {
-                margin-bottom: $marginCoffee;
-            }
-            &:nth-child(odd) {
-                margin-right: $marginCoffee;
-            }
         }
     }
     &__column {
         display: flex;
     }
     &__info {
-        margin: 40px 44px;
+        padding: 40px 44px;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -45,7 +45,6 @@
     }
     &__img-block {
         background-color: $LightGray;
-        width: max-content;
     }
     &__add {
         align-items: center;
@@ -64,36 +63,37 @@
     }
 }
 
+@media (max-width: 1138px) {
+    .coffee {
+        &__info {
+            padding: 20px 20px;
+        }
+    }
+}
+
 @media (max-width: 992px) {
     .coffee {
         &__info {
-            margin: 0 40px;
-        }
-        &__item {
-            width: 50%;
+            padding: 0 40px;
+            align-items: center;
         }
         &__img-block {
             display: flex;
+            justify-content: center;
         }
         &__img {
-            width: 100%;
+            object-fit: cover;
+        }
+        &__item{
+            flex-direction: column;
         }
     }
 }
 
 @media (max-width: 767px) {
     .coffee {
-        height: auto;
-        .coffee__item {
-            flex-direction: column;
-            margin-right: 0 !important;
-            width: 60%;
-        }
-        &__img-block {
-            width: auto;
-        }
-        &__name {
-            font-size: calc(1.2em + (5 + 5 * 0.7) * ((100vw - 320px) / 1280));
+        &__items{
+            grid-template-columns: 1fr;
         }
     }
 }

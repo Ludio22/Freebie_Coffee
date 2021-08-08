@@ -207,8 +207,11 @@
 }
 /*Color-Variables*/
 /*Size-Variables*/
-.coffee {
-  height: calc(894px - 114px);
+.coffee .container {
+  padding: 30px;
+}
+.coffee__titles {
+  padding-bottom: 3em;
 }
 .coffee__block_blue {
   background-color: #415167;
@@ -218,25 +221,20 @@
   z-index: -1;
 }
 .coffee__items {
-  display: flex;
-  flex-direction: column;
+  gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .coffee__items .coffee__item {
   background-color: white;
   display: flex;
-  flex: 0 1 50%;
-}
-.coffee__items .coffee__item:nth-child(-n+2) {
-  margin-bottom: 16px;
-}
-.coffee__items .coffee__item:nth-child(odd) {
-  margin-right: 16px;
 }
 .coffee__column {
   display: flex;
 }
 .coffee__info {
-  margin: 40px 44px;
+  padding: 40px 44px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -253,7 +251,6 @@
 }
 .coffee__img-block {
   background-color: #edf0f5;
-  width: max-content;
 }
 .coffee__add {
   align-items: center;
@@ -271,34 +268,30 @@
   width: 116px;
 }
 
+@media (max-width: 1138px) {
+  .coffee__info {
+    padding: 20px 20px;
+  }
+}
 @media (max-width: 992px) {
   .coffee__info {
-    margin: 0 40px;
-  }
-  .coffee__item {
-    width: 50%;
+    padding: 0 40px;
+    align-items: center;
   }
   .coffee__img-block {
     display: flex;
+    justify-content: center;
   }
   .coffee__img {
-    width: 100%;
+    object-fit: cover;
+  }
+  .coffee__item {
+    flex-direction: column;
   }
 }
 @media (max-width: 767px) {
-  .coffee {
-    height: auto;
-  }
-  .coffee .coffee__item {
-    flex-direction: column;
-    margin-right: 0 !important;
-    width: 60%;
-  }
-  .coffee__img-block {
-    width: auto;
-  }
-  .coffee__name {
-    font-size: calc(1.2em + (5 + 5 * 0.7) * ((100vw - 320px) / 1280));
+  .coffee__items {
+    grid-template-columns: 1fr;
   }
 }
 /*Color-Variables*/
@@ -406,11 +399,6 @@ footer small {
   margin: 0 auto;
 }
 
-@media (max-width: 1138px) {
-  .coffee__info {
-    margin: 20px 20px;
-  }
-}
 @media (max-width: 992px) {
   .add {
     flex-direction: column;
